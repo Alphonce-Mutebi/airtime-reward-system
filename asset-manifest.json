@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/airtime-reward-system/static/css/main.8f045531.chunk.css",
+    "main.js": "/airtime-reward-system/static/js/main.a1bde46d.chunk.js",
+    "main.js.map": "/airtime-reward-system/static/js/main.a1bde46d.chunk.js.map",
+    "runtime-main.js": "/airtime-reward-system/static/js/runtime-main.3441cca7.js",
+    "runtime-main.js.map": "/airtime-reward-system/static/js/runtime-main.3441cca7.js.map",
+    "static/css/2.4be38407.chunk.css": "/airtime-reward-system/static/css/2.4be38407.chunk.css",
+    "static/js/2.01ca7722.chunk.js": "/airtime-reward-system/static/js/2.01ca7722.chunk.js",
+    "static/js/2.01ca7722.chunk.js.map": "/airtime-reward-system/static/js/2.01ca7722.chunk.js.map",
+    "static/js/3.3fbb3051.chunk.js": "/airtime-reward-system/static/js/3.3fbb3051.chunk.js",
+    "static/js/3.3fbb3051.chunk.js.map": "/airtime-reward-system/static/js/3.3fbb3051.chunk.js.map",
+    "index.html": "/airtime-reward-system/index.html",
+    "static/css/2.4be38407.chunk.css.map": "/airtime-reward-system/static/css/2.4be38407.chunk.css.map",
+    "static/css/main.8f045531.chunk.css.map": "/airtime-reward-system/static/css/main.8f045531.chunk.css.map",
+    "static/js/2.01ca7722.chunk.js.LICENSE.txt": "/airtime-reward-system/static/js/2.01ca7722.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3441cca7.js",
+    "static/css/2.4be38407.chunk.css",
+    "static/js/2.01ca7722.chunk.js",
+    "static/css/main.8f045531.chunk.css",
+    "static/js/main.a1bde46d.chunk.js"
+  ]
+}
