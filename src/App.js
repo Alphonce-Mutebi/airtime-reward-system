@@ -3,10 +3,16 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faPlusSquare, faEdit, faEye, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+
+
 import Login from './components/login.component';
 import SignUp from './components/signup.component';
 import Dashboard from './components/dashboard.component';
 
+library.add(fab, faPlusSquare, faEdit, faEye, faTrashAlt) 
 
 function App() {
   return (

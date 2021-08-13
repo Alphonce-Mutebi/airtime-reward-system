@@ -1,8 +1,18 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React, {useState} from 'react';
+// import { useHistory } from 'react-router-dom';
+import Modal from 'react-bootstrap/Modal'
+import { Button} from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
 
 const Dashboard = (props) => {
-  const history = useHistory();
+//   const history = useHistory();
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div>
       <h1>Campaigns</h1>
@@ -16,26 +26,45 @@ const Dashboard = (props) => {
             </div>
 
             <div className="col-md-2">
-                <button className="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Add Campaign</button>
-                    <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            ...
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Save changes</button>
-                        </div>
-                        </div>
+            <Button variant="primary" onClick={handleShow}>
+                Add Reward Campaign
+            </Button>
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header >
+                <Modal.Title>Add Reward Campaign</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+
+                <form>
+                    <div className="form-group">
+                        <label>Campaign Name</label>
+                        <input type="text" className="form-control" placeholder="campaign name" />
                     </div>
+
+                    <div className="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control"  rows="3"></textarea>
                     </div>
+
+                    <div className="form-group">
+                        <label>Airtime Amount</label>
+                        <input type="number" className="form-control" placeholder="100" />
+                    </div>
+
+                </form>
+
+                </Modal.Body>
+                <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Close
+                </Button>
+                <Button variant="primary" onClick={handleClose}>
+                    Save Changes
+                </Button>
+                </Modal.Footer>
+            </Modal>
+
             </div>
         </div>
       </div>
@@ -43,8 +72,8 @@ const Dashboard = (props) => {
 
       {/* Table */}
       <div className="container mt-5">
-        <table class="table">
-            <thead class="thead-dark">
+        <table className="table">
+            <thead className="thead-dark">
                 <tr>
                 <th scope="col">Campaign Name</th>
                 <th scope="col">Action</th>
@@ -54,16 +83,29 @@ const Dashboard = (props) => {
             <tbody>
                 <tr>
                 <td>School of Engineering and Computer Science</td>
-                <td>test</td>
+                <td>
+                    <span className="mr-5"> <FontAwesomeIcon icon="plus-square" /> </span>
+                    <span className="mr-5"> <FontAwesomeIcon icon="edit" /> </span>
+                    <span className="mr-5"> <FontAwesomeIcon icon="trash-alt" /> </span>
+                    <span className="mr-5"> <FontAwesomeIcon icon="eye" /> </span> 
+                </td>
                 </tr>
                 <tr>
                 <td>School of economics and Mathematics</td>
-                <td>test</td>
+                <td>
+                    <span className="mr-5"> <FontAwesomeIcon icon="plus-square" /> </span>
+                    <span className="mr-5"> <FontAwesomeIcon icon="edit" /> </span>
+                    <span className="mr-5"> <FontAwesomeIcon icon="trash-alt" /> </span>
+                    <span className="mr-5"> <FontAwesomeIcon icon="eye" /> </span>
+                </td>
                 </tr>
                 <tr>
                 <td>School of Tourism and Culinary Arts</td>
-                <td>test</td>
-    
+                <td> 
+                    <span className="mr-5"> <FontAwesomeIcon icon="plus-square" /> </span>
+                    <span className="mr-5"> <FontAwesomeIcon icon="edit" /> </span>
+                    <span className="mr-5"> <FontAwesomeIcon icon="trash-alt" /> </span>
+                    <span className="mr-5"> <FontAwesomeIcon icon="eye" /> </span></td>
                 </tr>
             </tbody>
         </table>
