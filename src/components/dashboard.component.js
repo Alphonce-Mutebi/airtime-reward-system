@@ -138,19 +138,24 @@ const Dashboard = (props) => {
                     <span className="mr-5"> <FontAwesomeIcon icon="edit" onClick={editCampaign}/>
                     <Modal show={editCampaignDialog} onHide={closeEditCampaign}>
                         <Modal.Header >
-                            <Modal.Title>Customer</Modal.Title>
+                            <Modal.Title>Campaign</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
 
                         <form>
                             <div className="form-group">
-                                <label>Customer Name</label>
-                                <input type="text" className="form-control" placeholder="Customer Name" />
+                                <label>Campaign Name</label>
+                                <input type="text" className="form-control" placeholder="campaign name" />
                             </div>
 
                             <div className="form-group">
-                                <label>Phone Number</label>
-                                <input type="number" className="form-control" placeholder="+254723289212" />
+                                <label>Description</label>
+                                <textarea class="form-control"  rows="3"></textarea>
+                            </div>
+
+                            <div className="form-group">
+                                <label>Airtime Amount</label>
+                                <input type="number" className="form-control" placeholder="100" />
                             </div>
 
                         </form>
