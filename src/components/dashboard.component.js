@@ -3,11 +3,35 @@ import React, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal'
 import { Button} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
 
 const Dashboard = (props) => {
 //   const history = useHistory();
+
+const renderAddCustomerTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Add Customer
+    </Tooltip>
+  );
+
+  const renderEditCampaignTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Edit Camapign
+    </Tooltip>
+  );
+
+  const renderViewCampaignTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      View Camapign
+    </Tooltip>
+  );
+
+  const renderDeleteCampaignTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Delete Campaign
+    </Tooltip>
+  );
 
   const [ addCampaignDialog, setShowCampaign] = useState(false);
   const [ addCustomerDialog, setShowCustomer] = useState(false);
@@ -104,6 +128,11 @@ const Dashboard = (props) => {
                 <tr>
                 <td>School of Engineering and Computer Science</td>
                 <td>
+                <OverlayTrigger
+                    placement="bottom"
+                    delay={{ show: 350, hide: 500 }}
+                    overlay={renderAddCustomerTooltip}
+                >
                 <span className="mr-5" > <FontAwesomeIcon icon="plus-square" onClick={addCustomer}/>
                     <Modal show={addCustomerDialog} onHide={closeAddCustomer}>
                         <Modal.Header >
@@ -135,6 +164,13 @@ const Dashboard = (props) => {
                         </Modal.Footer>
                     </Modal>
                      </span>
+            </OverlayTrigger>
+                    
+            <OverlayTrigger
+                    placement="bottom"
+                    delay={{ show: 350, hide: 500 }}
+                    overlay={renderEditCampaignTooltip}
+                >
                     <span className="mr-5"> <FontAwesomeIcon icon="edit" onClick={editCampaign}/>
                     <Modal show={editCampaignDialog} onHide={closeEditCampaign}>
                         <Modal.Header >
@@ -172,6 +208,13 @@ const Dashboard = (props) => {
                     </Modal>
                     
                      </span>
+                </OverlayTrigger>
+
+                <OverlayTrigger
+                    placement="bottom"
+                    delay={{ show: 350, hide: 500 }}
+                    overlay={renderDeleteCampaignTooltip}
+                >
                     <span className="mr-5"> <FontAwesomeIcon icon="trash-alt" onClick={deleteCampaign}/> 
                     <Modal show={deleteCampaignDialog} onHide={closeDeleteCampaign}>
 
@@ -191,6 +234,13 @@ const Dashboard = (props) => {
 
                     </Modal>
                     </span>
+                </OverlayTrigger>
+
+                <OverlayTrigger
+                    placement="bottom"
+                    delay={{ show: 350, hide: 500 }}
+                    overlay={renderViewCampaignTooltip}
+                >
                     <span className="mr-5"> <FontAwesomeIcon icon="eye" onClick={ViewCampaign}/>
                     <Modal show={ViewCampaignDialog} onHide={ViewCampaign}>
                         <Modal.Header>
@@ -227,6 +277,7 @@ const Dashboard = (props) => {
                         </Modal.Footer>
                     </Modal>
                      </span> 
+                    </OverlayTrigger>
                 </td>
                 </tr>
                 
